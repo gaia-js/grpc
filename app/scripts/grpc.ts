@@ -35,7 +35,7 @@ export default class ClearCacheCommand extends ScriptCommand {
 
   async exec(argv: any) {
     if (!argv.proto || !argv.service || !argv.method) {
-      console.error('gpc [--proto <proto file> --service <service name> --method <method>]');
+      console.error('grpc [--address <ip:port> --proto <proto file> --service <service name> --method <method>]');
       return;
     }
 

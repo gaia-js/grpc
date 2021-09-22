@@ -24,6 +24,7 @@
     "lint": "npm run gencode && eslint . --ext .ts",
     "clean": "ets clean",
     "build": "npm run tsc",
+    "script": "node node_modules/@gaiajs/gaiajs/bin/run.js",
     "pub": "rm -rf dist/ && npm run build && npm version patch && cp -Rf typings package.json index.* tshelper.js ./dist/ && npm publish dist/ --access public --registry=https://registry.npmjs.org/"
   },
   "dependencies": {
