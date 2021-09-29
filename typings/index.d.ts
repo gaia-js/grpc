@@ -1,17 +1,20 @@
 import 'egg';
 import '@gaiajs/gaiajs';
 import { gaia } from '@gaiajs/gaiajs';
+import './app/service/rpc/index';
+import { IGrpcServiceRpc } from '../typings/app/index';
 
 declare module grpc {
-  interface IService extends IGrpcService, gaia.IService {
+  interface IServiceRpc extends IGrpcServiceRpc, gaia.IServiceRpc {
+
+  }
+
+  interface IService extends gaia.IService {
+    rpc: IServiceRpc
   }
 }
 
 declare module 'egg' {
-  interface IObject extends grpc.IObject {
-  }
-
-
   interface IServiceRpc extends IGrpcServiceRpc, gaia.IServiceRpc {
 
   }
